@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap');
+
+
+/* with this code anytime we add a border to an element it won't affcts its width */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    /* set elements side-by-side */
+    display: flex;
+    /* center elements */
+    align-items: center;
+    /* both 2 lines set elements to the middle of the view point of the page */
+    justify-content: center;
+    height: 100vh;
+    /* eliminates scrollbars */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 30px;
+    /* color: rgb(255, 255, 255); */
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.white {
+    color: white;
+    font-weight: 400;
+}
+
+.panel h3 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    margin: 0;
+    opacity: 0;
+    /* text-shadow: 2px 2px 2px #5a5858; */
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media(max-width: 480) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
